@@ -1,0 +1,60 @@
+<!-- 
+<table class="table table-hover table-borderless">
+    <thead>
+    <th>Vreme slanja</th>
+    <th>Broj posiljke</th>
+    <th>Status</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let o of orders">
+            <td>{{ o.timeCreated }}</td>
+            <td>{{ o.id }}</td>
+            <td>{{ o.status }}</td>
+        </tr>
+    </tbody>
+</table> -->
+<!-- <p>Nove porudzbine</p>
+<div class="table-responsive">
+<table class="table table-borderless table-light">
+    <thead>
+      <tr>
+        <th>Vreme slanja</th>
+        <th>Broj posiljke</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let o of orders2">
+            <td>{{ o.timeCreated }}</td>
+            <td>{{ o.id }}</td>
+            <td> NOVA </td>
+            <td><button class="btn">Prihvati</button></td>
+            <td><button class="btn">Nastavi</button></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+  {{orders2.length}} -->
+  <h3>Nove porudzbine</h3>
+  <div class="container">
+  <div class="row" *ngFor="let item of orders1">
+      <div class="col-sm-12 col-md-12"><p>Sifra posiljke: {{item.id}}</p></div>
+      <div class="col-sm-12 col-md-12"><p>Kreirana: {{item.timeCreated}}</p></div>
+      <div class="col-sm-12 col-md-12"><p>Klijent: {{item.clientId}}</p></div>
+      <div class="col-sm-12 col-md-12"><p>Broj paketa: {{item.packages.length}}</p></div>
+      <div class="col-sm-12 col-md-12"><button class="btn text-light">Organizuj transport</button></div>
+      
+  </div>
+  </div>
+  <h3>Poslate porudzbine</h3>
+  <div class="container">
+    <div class="row" *ngFor="let item of orders1">
+        <div class="col-sm-12 col-md-12"><p>Sifra posiljke: {{item.id}}</p></div>
+        <div class="col-sm-12 col-md-12"><p>Kreirana: {{item.timeCreated}}</p></div>
+        <div class="col-sm-12 col-md-12"><p>Klijent: {{item.clientId}}</p></div>
+        <div class="col-sm-12 col-md-12"><p>Broj paketa: {{item.packages.length}}</p></div>
+        <div class="col-sm-12 col-md-12"><p>Datum slanja: {{item.timeSend}}</p></div>
+        <div class="col-sm-12 col-md-12"><button class="btn text-light">Prati posiljku</button></div>
+        
+    </div>
+    </div>

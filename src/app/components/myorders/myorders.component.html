@@ -1,0 +1,10 @@
+<h3>Moje porudzbine</h3>
+  <div class="container">
+  <div class="row" *ngFor="let item of myOrders2">
+      <div class="col-sm-12 col-md-12"><p>Sifra posiljke: {{item.id}}</p></div>
+      <div class="col-sm-12 col-md-12"><p>Kreirana: {{item.timeCreated}}</p></div>
+      <div class="col-sm-12 col-md-12"><p>Broj paketa: {{item.packages.length}}</p></div>
+      <div class="col-sm-12 col-md-12"><button class="btn text-light" routerLink="followmyorder">Prati posiljku</button></div>
+      
+  </div>
+  </div>

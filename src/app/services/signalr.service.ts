@@ -30,4 +30,7 @@ export class SignalrService {
     this.hubConnection.invoke("SendMessage",user,message)
       .catch((err) => console.log(err))
    }
+   public addOrderListener = (callback: (order:any) => void) => {
+     this.hubConnection.on("ReceiveOrder",callback)
+   }
 }

@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/* #container {
+    border-radius: 25px;
+    padding: 3rem 5rem;
+    background-color: white;
+    color: black;
+    margin-top: 15rem;
+} */
+p {
+    font-size: 25px;
+}
+.form-control {
+    padding: 13px;
+}
+td {
+    font-size: 15px;
+}
+th {
+    font-size: 20px;
+}

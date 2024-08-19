@@ -1,0 +1,69 @@
+<body>
+    
+
+    <div class="inner" *ngIf="option">
+        <div id="buttons">
+            <a (click)="changeOption()" class="active"><mat-icon>work</mat-icon>Zaposleni</a>
+            <a (click)="changeOption()"><mat-icon style="color: #fff;">person</mat-icon>Klijent</a>
+        </div>
+        <div class="main">  	
+            <input type="checkbox" id="chk" aria-hidden="true">
+
+                <div class="signup">
+                    <form>
+                        <label id="heading" for="chk" aria-hidden="true">Registracija zaposlenog</label>
+                        <input [(ngModel)]="employee.role" type="text" name="position" placeholder="Radno mesto" required="">
+                        <input [(ngModel)]="employee.firstName" type="text" name="firstName" placeholder="Ime" required="">
+                        <input [(ngModel)]="employee.lastName" type="text" name="lastName" placeholder="Prezime" required="">
+                        <input [(ngModel)]="employee.email" type="text" name="email" placeholder="Email" required="">
+                        <input [(ngModel)]="employee.phone" type="text" name="phone" placeholder="Broj telefona" required="">
+                        <input [(ngModel)]="employee.username" type="text" name="txt" placeholder="Korisnicko ime" required="">
+                        <input [(ngModel)]="employee.password" type="password" name="pswd" placeholder="Lozinka" required="">
+                        <button (click)="registerEmployee()">Registruj se</button>
+                    </form>
+                </div>
+
+                <div class="login">
+                    <form>
+                        <label  for="chk" aria-hidden="true">Prijava</label>
+                        <input [(ngModel)]="login.username" type="text" name="email" placeholder="Korisničko ime" required="">
+                        <input [(ngModel)]="login.password" type="password" name="pswd" placeholder="Lozinka" required="">
+                        <p *ngIf="incorrect==true" id="message"><mat-icon style="color:red;">clear</mat-icon>Neuspešna prijava!</p>
+                        <button (click)="loginn()">Prijavi se</button>
+                    </form>
+                </div>
+        </div>
+</div>
+    <div class="inner"n  *ngIf="!option">
+        <div id="buttons">
+            <a (click)="changeOption()" ><mat-icon style="color: #fff;">work</mat-icon>Zaposleni</a>
+            <a (click)="changeOption()" class="active"><mat-icon style="color: #cfb095;">person</mat-icon>Klijent</a>
+        </div>
+        <div class="main">  	
+            <input type="checkbox" id="chk" aria-hidden="true">
+                <div class="signup">
+                    <form>
+                        <label id="heading" for="chk" aria-hidden="true">Registracija klijenta</label>
+                        <input [(ngModel)]="client.pib" type="text" name="pib" placeholder="PIB" required="">
+                        <input [(ngModel)]="client.companyName" type="text" name="companyname" placeholder="Naziv kompanije" required="">    
+                        <input [(ngModel)]="client.email" type="text" name="email" placeholder="Email" required="">    
+                        <input [(ngModel)]="client.phone" type="text" name="contacttel" placeholder="Kontakt telefon" required="">    
+                        <input [(ngModel)]="client.contactPerson" type="text" name="emailowner" placeholder="Email vlasnika" required="">    
+                        <input [(ngModel)]="client.username" type="text" name="username" placeholder="Korisnicko ime" required="">
+                        <input [(ngModel)]="client.password" type="password" name="pswd" placeholder="Lozinka" required="">
+                        <button (click)="registerClient()">Registruj se</button>
+                    </form>
+                </div>
+
+                <div class="login">
+                    <form>
+                        <label  for="chk" aria-hidden="true">Prijava</label>
+                        <input [(ngModel)]="loginC.username" type="text" name="email" placeholder="Korisničko ime" required="">
+                        <input [(ngModel)]="loginC.password" type="password" name="pswd" placeholder="Lozinka" required="">
+                        <p *ngIf="incorrect2==true" id="message"><mat-icon style="color:red;">clear</mat-icon>Neuspešna prijava!</p>
+                        <button (click)="loginClient()">Prijavi se</button>
+                    </form>
+                </div>
+        </div>
+</div>
+</body>

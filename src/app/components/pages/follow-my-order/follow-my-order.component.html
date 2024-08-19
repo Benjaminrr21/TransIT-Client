@@ -1,0 +1,28 @@
+<div id="container">
+    <h2>Proveri status svoje posiljke!</h2>
+    <p>Unesi broj posiljke:</p>
+    <div class="row">
+
+        <div class="col-sm-1">
+            <small id="helpId" class="form-text text-muted"><mat-icon style="color: #cfb095; font-size:26;"> add_location</mat-icon></small>
+        </div>
+        <div class="col-sm-8">
+      <input [(ngModel)]="number" type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Unesite broj posiljke...">
+            
+        </div>
+        <div class="col-sm-3">
+            <button (click)="followOrder()" class="btn btn-light text-light">
+                
+                Posalji
+              </button>
+        </div>
+    </div>
+    <div class="input-group mb-3">
+      
+      <small style="font-size:2;" id="helpId" class="form-text text-muted">
+        
+      </small>
+      
+    </div>
+          
+       

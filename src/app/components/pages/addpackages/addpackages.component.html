@@ -1,0 +1,27 @@
+<div id="container">
+    <h1>Dodavanje stavki pošiljke</h1>
+    <div class="table-responsive">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Kategorija</th>
+        <th>Opis</th>
+        <th>Cena</th>
+        <th>Količina</th>
+        <th>Napomena</th>
+        <th>Naruči</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{ item.category }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.price }}</td>
+        <td><input type="number" class="form-control" min="1" value="1" [(ngModel)]="amount[item.id]"></td>
+        <td><input type="text" class="form-control" [(ngModel)]="details[item.id]"></td>
+        <td><button class="btn btn-primary" (click)=add(item)>Naruči</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>

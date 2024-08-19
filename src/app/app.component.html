@@ -1,29 +1,61 @@
-<!-- <div>
-  <input #user placeholder="User">
-  <input #message placeholder="Message">
-  <button (click)="sendMessage(user.value,message.value)">Send</button>
-</div> -->
-<body>
-<div class="main">  	
-  <input type="checkbox" id="chk" aria-hidden="true">
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <div class="container">
+      <a class="navbar-brand me-auto" href="#">
 
-    <div class="signup">
-      <form>
-        <label for="chk" aria-hidden="true">Sign up</label>
-        <input type="text" name="txt" placeholder="User name" required="">
-        <input type="email" name="email" placeholder="Email" required="">
-        <input type="password" name="pswd" placeholder="Password" required="">
-        <button>Sign up</button>
-      </form>
+      Trans<span id="it">IT</span></a>
+      
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li *ngIf="getRole() == 'Client'" class="nav-item">
+              <a class="nav-link mx-lg-2" href="createorder">Naruči</a>
+            </li>
+           <!--  <li *ngIf="getRole() == 'Client'" class="nav-item">
+              <a class="nav-link mx-lg-2" href="addpackages">Proizvodi</a>
+            </li> -->
+            <li *ngIf="getRole() == 'Client'" class="nav-item">
+              <a id="notif" class="nav-link mx-lg-2" routerLink='myorders'>Moje pošiljke</a>
+            </li>
+            <li *ngIf="getRole() == 'Dispecer'" class="nav-item">
+              <a class="nav-link mx-lg-2" routerLink='allorders'>Narudžbine <span *ngIf="isVisible" class="badge badge-secondary">New</span></a>
+            </li>
+            <li *ngIf="getRole() == 'Dispecer'" class="nav-item">
+              <a id="notif" class="nav-link mx-lg-2" routerLink='orders'>Transporti</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-lg-2" href="#" (click)="set()">Kontakt</a>
+            </li>
+            
+           
+          </ul>
+          
+        </div>
+      </div>
+      <a routerLink='login' class="login-button">Prijava</a>
+      <a *ngIf="service.isLogedIn()"  class="register-button" (click)="logout()">Odjava</a>
+      <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </div>
+  </nav>
 
-    <div class="login">
-      <form>
-        <label for="chk" aria-hidden="true">Login</label>
-        <input type="email" name="email" placeholder="Email" required="">
-        <input type="password" name="pswd" placeholder="Password" required="">
-        <button>Login</button>
-      </form>
-    </div>
-</div>
-</body>
+  <section class="hero-section" >
+  
+
+         <div class="container d-flex align-items-center justify-content-center fs-1 text-white flex-column">
+         <router-outlet style="background-color: white;"></router-outlet>
+         </div>
+
+        
+      
+  </section>
+  
+  
+  
