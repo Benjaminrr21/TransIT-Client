@@ -1,4 +1,4 @@
-<body>
+
     
 
     <div class="inner" *ngIf="option">
@@ -6,7 +6,6 @@
             <a (click)="changeOption()" class="active"><mat-icon>work</mat-icon>Zaposleni</a>
             <a (click)="changeOption()"><mat-icon style="color: #fff;">person</mat-icon>Klijent</a>
         </div>
-        <div class="main">  	
             <input type="checkbox" id="chk" aria-hidden="true">
 
                 <div class="signup">
@@ -32,7 +31,6 @@
                         <button (click)="loginn()">Prijavi se</button>
                     </form>
                 </div>
-        </div>
 </div>
     <div class="inner"n  *ngIf="!option">
         <div id="buttons">
@@ -66,4 +64,3 @@
                 </div>
         </div>
 </div>
-</body>

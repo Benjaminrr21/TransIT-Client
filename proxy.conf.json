@@ -1,0 +1,8 @@
+{
+    "/api":{
+        "target":"http://hostproject2024-001-site1.ftempurl.com",
+        "secure":false,
+        "changeOrigin":true,
+        "logLevel":"debug"
+    }
+}

@@ -22,6 +22,9 @@ thead th {
     text-align: center;
     
 }
+.col-sm-12 {
+    background-color: white;
+}
 .row {
     border-radius: 25px;
     margin-bottom: 20px;

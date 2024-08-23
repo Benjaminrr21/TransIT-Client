@@ -50,12 +50,17 @@
     color: #cfb095;
 }
 .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
     background-color: #fff;
     height: 80px;
-    margin: 20px;
-    border-radius: 16px;
+    margin: 0; /* Ukloni marginu da bi navigacija bila uz sam vrh */
+    border-radius: 0; /* Ukloni border radius da ne bi bilo problema sa ivicama */
     padding: 0.5rem;
     box-shadow: 0 0 10px;
+    z-index: 1000; /* Da bi bila iznad ostalih elemenata */
+    
 }
 .navbar-brand {
     font-weight: 500;
@@ -89,13 +94,16 @@
         visibility: visible;
     }
 }
-.hero-section {
+ .components-container {
     background: url("./images/slider-bg.jpg") no-repeat center;
     background-size: cover;
     width: 100%;
     height: 100vh;
+    position: fixed;
+
+    overflow-y: scroll;
 }
-.hero-section::before {
+.components-container::before {
     background-color: rgba(0, 0, 0, 0.6);
     content: "";
     position: absolute;
@@ -104,11 +112,14 @@
     right: 0;
     bottom: 0;
 }
-.hero-section .container {
+.components-container .container {
     height: 100vh;
+    width: 100vw;
     z-index: 1;
     position: relative;
-}
+    color: black;
+    margin-top: 50px;
+} 
 .hero-section h1 {
     font-size: 1.5rem;
     
@@ -132,4 +143,17 @@
 }
 router-outlet {
     background-color: white;
+}
+
+
+.row {
+    width: 100%;
+    padding-top: 100px;
+    
+    
+}
+.col-sm-8 {
+    padding: 0 0.3rem;
+    background-color: white;
+    color: black;
 }

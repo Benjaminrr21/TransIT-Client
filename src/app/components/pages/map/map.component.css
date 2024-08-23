@@ -1,0 +1,19 @@
+.map-container {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: relative;
+  }
+  #map {
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+}
+.col-sm-10 {
+  width: 100%;
+}
+  @media (max-width: 768px) {
+    .map-container {
+      height: 50vh; /* Manja visina na manjim ekranima */
+    }
+  }

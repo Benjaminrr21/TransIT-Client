@@ -1,0 +1,16 @@
+th, td {
+    padding: 0.3rem 0.5rem;
+
+}
+#cnt {
+    padding: 1.5rem;
+}
+.table-responsive {
+    padding: 0.3rem 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 10px 5px 10px 5px;
+    background-color: white;
+}

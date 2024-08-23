@@ -15,6 +15,10 @@ export class AppComponent implements OnInit{
   constructor(public signalRService:SignalrService,public ord:OrderService, public service:AuthService, private router:Router) {
   }
   ngOnInit(): void {
+    this.ord.getAll().subscribe(
+      res => console.log(res),
+      err => console.log(err)
+    )
       this.signalRService.startConnection();
       if(sessionStorage.getItem("role") == "Dispecer"){
       this.signalRService.addOrderListener((order) => {
@@ -22,13 +26,14 @@ export class AppComponent implements OnInit{
         this.set();
         
       })
+     
     }
       this.signalRService.addTransferChartDataListener();
       this.ord.getAll().subscribe(
         res => console.log(res),
         err => console.log(err)
       )
-
+    this.proba();
   }
   
 
@@ -38,6 +43,12 @@ export class AppComponent implements OnInit{
   logout(){
     this.service.logout();
     this.router.navigate([''])
+  }
+  proba(){
+    this.service.proba().subscribe(
+      res => console.log(res),
+      error => console.log(error)
+    )
   }
   getRole(){
     return this.service.getRole();

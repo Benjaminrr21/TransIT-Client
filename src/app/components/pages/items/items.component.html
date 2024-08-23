@@ -1,0 +1,38 @@
+
+<div id="container">
+    <h1>Upravljanje robom koja se prevozi</h1>
+     <button (click)="addingItem()" class="bb btn btn-info text-center justify-content-end border-0 text-light">Dodaj novi proizvod</button>
+    <div class="table-responsive">
+  <table class="table table-responsive table-bordered table-hover">
+    <thead>
+      <tr>
+        <td><input type="text" placeholder="Kategorija"></td>
+        <td><input type="text" placeholder="Opis"></td>
+        <td><input type="number" placeholder="Cena"></td>
+      </tr>
+      <tr>
+        <th>Kategorija</th>
+        <th>Opis</th>
+        <th>Cena</th>
+        <th>Izmeni</th>
+  
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of allItems">
+        <td>{{ item.category }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.price }}</td>
+        <td>
+            <button  class="bb btn text-center"><mat-icon> border_color</mat-icon></button>
+           </td>
+           <td> 
+            <button class="btn btn-danger"><mat-icon> delete</mat-icon></button>
+        </td>
+        </tr>
+        <tr *ngIf="adding"></tr>
+       
+    </tbody>
+  </table>
+</div>
+</div>

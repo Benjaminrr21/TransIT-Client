@@ -17,6 +17,9 @@ export class AuthService {
         .set("Access-Control-Allow-Origin","*")
     })
   }
+  proba(){
+    return this.http.get("http://benjaminramovic-001-site1.htempurl.com/api/Zone")
+  }
   registerClient(client:any):Observable<HttpResponse<any>>{
     return this.http.post(this.url+'/registerclient',client, {
       "headers": new HttpHeaders()

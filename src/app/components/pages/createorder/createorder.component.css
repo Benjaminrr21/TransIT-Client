@@ -1,8 +1,11 @@
-
+.container {
+   margin-top: 100px;
+}
 
 #container {
     background-color: white;
     color: black;
+    text-align: center;
 }
 .col-sm-3,.col-sm-1,.col-sm-8 {
     text-align: center;
@@ -24,4 +27,8 @@ p {
     transform: scale(1.03);
     transition: 0.9s;
 }
-
+.col-sm-8 {
+    padding: 0 0.3rem;
+    background-color: white;
+    color: black;
+}

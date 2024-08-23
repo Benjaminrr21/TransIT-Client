@@ -23,3 +23,16 @@ td {
 th {
     font-size: 20px;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+.col-sm-12 {
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    box-shadow: 3px 6px 5px;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}

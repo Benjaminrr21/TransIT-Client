@@ -1,0 +1,11 @@
+.bb {
+    background-color: #cfb095;
+    margin-right: 0.5rem;
+    color: white;
+}
+#container {
+    width: 100%;
+}
+mat-icon {
+    font-size: 20px;
+}

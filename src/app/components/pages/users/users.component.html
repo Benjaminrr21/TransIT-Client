@@ -1,1 +1,27 @@
-<p>users works!</p>
+<div id="cnt">
+    <h1>Zaposleni</h1>
+    <div class="table-responsive">
+  <table class="table table-borderless table-hover">
+    <thead>
+      <tr>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Email</th>
+        <th>Pozicija</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of users">
+        <td>{{ u.firstName }}</td>
+        <td>{{ u.lastName }}</td>
+        <td>{{ u.email }}</td>
+        <td>{{ u.role }}</td>
+      <!--   <td><input type="number" class="form-control" min="1" value="1" [(ngModel)]="amount[item.id]"></td>
+        <td><input type="text" class="form-control" [(ngModel)]="details[item.id]"></td>
+        <td><button class="btn btn-primary" (click)=add(item)>Naruči</button></td> -->
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>

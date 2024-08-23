@@ -22,6 +22,8 @@ import { AddpackagesComponent } from './components/pages/addpackages/addpackages
 import { MyordersComponent } from './components/myorders/myorders.component';
 import { AllordersComponent } from './components/pages/allorders/allorders.component';
 import { FollowMyOrderComponent } from './components/pages/follow-my-order/follow-my-order.component';
+import { MapComponent } from './components/pages/map/map.component';
+import { ItemsComponent } from './components/pages/items/items.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +38,8 @@ import { FollowMyOrderComponent } from './components/pages/follow-my-order/follo
     MyordersComponent,
     AllordersComponent,
     FollowMyOrderComponent,
+    MapComponent,
+    ItemsComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,11 +6,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class OrderService {
-  public url:string = "https://localhost:7286/api/Order";
+  //public url:string = "https://localhost:7286/api/Order";
+  //public url:string = "http://hostproject2024-001-site1.ftempurl.com/api/Order";
+  //public url:string = "http://projectis-001-site1.atempurl.com/WeatherForecast";
+  public url:string = "http://parkeasyproject.somee.com/api/Zone";
 
   constructor(private http:HttpClient) { }
   getAll():Observable<any> {
-    return this.http.get(this.url)
+    return this.http.get(this.url,{
+      "headers":new HttpHeaders()
+        .set("Content-Type","application/json")
+    })
   }
   getById(id:Number):Observable<any> {
     return this.http.get(this.url+'/'+id)

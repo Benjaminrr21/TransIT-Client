@@ -11,6 +11,7 @@ export class AddpackagesComponent implements OnInit {
  public items:any[] = []
  amount:number[] = [];
  details:string[] = [];
+ 
 constructor(private itemService:ItemService, private packageService:PackageService){}
 ngOnInit(): void {
     this.getItems()
@@ -45,6 +46,12 @@ add(item:any){
       console.log(err)
     }
   )
+}
+addNew(item:any){
+this.itemService.add(item).subscribe(
+  res => console.log(res),
+  err => console.log(err)
+)
 }
 
 }
