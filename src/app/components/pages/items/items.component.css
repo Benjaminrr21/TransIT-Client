@@ -3,9 +3,15 @@
     margin-right: 0.5rem;
     color: white;
 }
+h1 {
+    color: white;
+}
 #container {
     width: 100%;
 }
 mat-icon {
     font-size: 20px;
+}
+.adding {
+    background-color: wheat;
 }

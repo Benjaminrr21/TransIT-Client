@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ClientService {
-  public url:string = "https://localhost:7286/api/Client"
+  public url:string = "http://transitprojectapi.somee.com/api/Client"
   constructor(private http:HttpClient) { }
 
   getAll():Observable<any>{

@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FactureService {
-  public url:string = "https://localhost:7286/api/Facture"
+  public url:string = "http://transitprojectapi.somee.com/api/Facture"
+  //public url:string = "https://localhost:7286/api/Facture"
   constructor(private http:HttpClient) { }
   getAll():Observable<any> {
     return this.http.get(this.url)

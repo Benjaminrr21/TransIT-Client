@@ -18,3 +18,47 @@
 .coll {
     width: 100%;
 }
+
+.col-sm-12 {
+    background: transparent;
+}
+.col-sm-9 {
+    background: transparent;
+}
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: bolder;
+
+
+}
+.left {
+    text-align: center;
+}
+.left h1 {
+    font-size: 4rem;
+    font-weight:900;
+}
+.left p {
+    font-size: 1.5rem;
+}
+.card-img-top {
+    height: 150px;
+}
+
+.btn {
+    background-color: #cfb095;
+    border: none;
+}
+.btn {
+    background-color: #cfb095;
+    color: white;
+    width: 50%;
+    padding: 1rem;
+    font-size: large;
+    position: absolute;
+    bottom: 50%;
+}
+

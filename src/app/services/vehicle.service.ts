@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class VehicleService {
-  public url:string = "https://localhost:7286/api/Vehicle"
+  public url:string = "http://transitprojectapi.somee.com/api/Vehicle"
   constructor(private http:HttpClient) { }
 
   getAll():Observable<any> {
@@ -22,6 +22,10 @@ export class VehicleService {
       .set("Access-Control-Allow-Origin","*"),
       observe:"response"
     })
+  }
+  addToTransport(vid:number,tid:number){
+    return this.http.put(this.url+'/'+'AddVehicleToTransport/'+vid+'/'+tid,{})
+
   }
   delete(id:Number) : Observable<any> {
     return this.http.delete(this.url+"/"+id)

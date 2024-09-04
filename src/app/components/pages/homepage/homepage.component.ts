@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class HomepageComponent {
 
+  getRole(){
+    
+    return sessionStorage.getItem("role")
+  }
+
 }

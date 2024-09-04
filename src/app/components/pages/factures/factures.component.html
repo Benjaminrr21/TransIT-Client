@@ -1,0 +1,15 @@
+
+  <h3>Fakture</h3>
+  <div class="container">
+  <div class="row" *ngFor="let item of factures">
+      <div class="col-sm-12 col-md-12"><p>Izdata: {{item.dateCreated}}, TransIT team</p></div>
+      <div class="col-sm-12 col-md-12"><p>Iznos: {{item.amount}}</p></div>
+      <div class="col-sm-12 col-md-12"><p>Nacin placanja: {{item.paying}}</p></div>
+      <div class="col-sm-12 col-md-12"><p>Posiljka broj: {{item.orderId}}</p></div>
+      <div class="col-sm-12 col-md-12">
+          <small>Molimo Vas da izmirite Vase obaveze. Hvala!</small>
+      </div>
+      
+  </div>
+  </div>
+  

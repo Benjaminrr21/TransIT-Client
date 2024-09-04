@@ -1,0 +1,45 @@
+.row {
+    background-color: white;
+    color: black;
+    font-size: 1.5rem;
+}
+.col-sm-3 {
+    text-align: center;
+    
+}
+.row {
+    border-radius: 25px;
+    margin-bottom: 20px;
+    box-shadow: 1px 2px 1px 2px;
+    padding: 1rem 2rem;
+    border: none;
+}
+.row:hover {
+    transform: scale(1.07);
+    transition: 1s;
+}
+.btn {
+    text-align: center;
+    background-color: #cfb095;
+    border-radius: 10px;
+    border: none;
+}
+p {
+    font-size: 1rem;
+    text-align: left;
+}
+h3 {
+    font-size: 2.5rem;
+    color: white;
+}
+.col-sm-12 {
+    padding: 0.1rem;
+}
+h4 {
+    color: white;
+    text-align: center;
+
+}
+#sendorders {
+    background-color: rgb(186, 221, 186);
+}

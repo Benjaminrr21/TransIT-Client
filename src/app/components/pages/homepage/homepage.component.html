@@ -1,1 +1,18 @@
-<h1>Pocetna</h1>
+<div class="row">
+    <div class="left">
+        <h1>TransIT</h1>
+        <p>Informacioni sistem za spedicije</p>
+    </div>
+    <div class="row">
+        <!-- <div class="col-sm-4"><h1>Kvalitetna vozila</h1></div>
+        <div class="col-sm-4"><h1>Brza isporuka</h1></div>
+        <div class="col-sm-4"><h1>Zadovoljni korisnici</h1></div> -->
+
+        <button *ngIf="getRole() == 'Dispecer'" class="btn rounded-3" routerLink='create-transport'>Organizuj transport</button>
+    </div>
+   <!--  <div class="row">
+        <div class="col-sm-12">
+            <button class="btn btn-primary w-100 text-light font-weight-bolder p-3">Pogledaj</button>
+        </div>
+    </div> -->
+</div>

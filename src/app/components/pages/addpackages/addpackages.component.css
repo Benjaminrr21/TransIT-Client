@@ -1,9 +1,22 @@
 
 #container {
-    padding-top: 5rem;
+    padding-top: 2.5rem;
     height: 100vh;
+    border-radius: 30px 0 30px 0;
+    background-color: transparent;
 }
 button {
     background-color: #cfb095;
     border: none;
+}
+button:hover {
+    background-color: white;
+    color: #cfb095;
+}
+h1 {
+    color: white;
+}
+.wht {
+    background-color: white;
+    color: #cfb095;
 }

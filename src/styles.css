@@ -29,10 +29,28 @@ body {
     flex-direction: column;
 }
 .col-sm-12 {
-    background-color: white;
+    background: transparent;
     color: black;
-    border-radius: 15px;
-    box-shadow: 3px 6px 5px;
     padding: 2rem 1rem;
     box-sizing: border-box;
+}
+button, .login-button, .register-button {
+    cursor: pointer;
+}
+.navbar-brand {
+    font-weight: 500;
+    color: #cfb095;
+    font-size: 30px;
+    transition: 0.3s color;
+
+}
+#it {
+    color: #000;
+    font-weight:500;
+    margin-left: 0.1rem;
+    
+
+}
+.spinner {
+    color: #cfb095;
 }

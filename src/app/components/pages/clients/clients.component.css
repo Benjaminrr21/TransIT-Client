@@ -1,0 +1,16 @@
+th, td {
+    padding: 1rem 0.5rem;
+
+}
+h1 {
+    color: white;
+    font-size: 2rem;
+}
+.btn {
+    background-color: #cfb095;
+    color: white;
+}
+#cnt {
+    padding: 1rem;
+    border-radius: 25px;
+}

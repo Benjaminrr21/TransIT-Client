@@ -1,0 +1,16 @@
+<h3>Zahtevi za registraciju</h3>
+  <div class="container">
+  <div class="row" *ngFor="let item of requests2">
+      <div class="col-sm-12 col-md-12">
+          <p>Ime i prezime: {{item.firstName}} {{item.lastName}}</p>
+          <p>Email adresa: {{item.email}}</p>
+          <p>Radno mesto: {{item.role}}</p>
+      </div>
+      
+      <div class="col-sm-12 col-md-12">
+          <button class="btn btn-success text-light ml-5" (click)="accept(item.id)">Odobri zahtev</button>
+          <button class="btn btn-danger text-light" (click)="decline(item.id)">Odbij zahtev</button>
+      </div>
+      
+  </div>
+  </div>

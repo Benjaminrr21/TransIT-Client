@@ -1,0 +1,16 @@
+
+  <h3>Putni troskovi</h3>
+
+  <div class="container">
+
+  <div class="row" *ngFor="let item of costs">
+      <div class="col-sm-12 col-md-12"><p>Sifra troska: {{item.id}}</p></div>
+      <div class="col-sm-12 col-md-12"><p>Gorivo: {{item.fuelCost}} din</p></div>
+      <div class="col-sm-12 col-md-12"><p>Carina: {{item.carinaCost}} din</p></div>
+      <div class="col-sm-12 col-md-12"><p>Popravke: {{item.repairCost}} din</p></div>
+      <div class="col-sm-12 col-md-12"><p>Ostalo: {{item.customsCost}} din</p></div>
+      <div class="col-sm-12 col-md-12"><p>Napomene: {{item.napomena}}</p></div>
+      
+  </div>
+  </div>
+ 

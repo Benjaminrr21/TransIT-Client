@@ -1,0 +1,31 @@
+<div class="containerr">
+    <h3>Odabir vozila</h3>
+  
+    <label for="">Izaberite vozilo koje ce prevoziti posiljke</label>
+    <p>Tezina posiljke: {{co}} kg</p>
+    <ul style="list-style-type: none;">
+      <li *ngFor="let v of vehicles" class="flex justify-content-center">
+        <input 
+          (change)="setToList(v.id, $event)" 
+          class="form-check-input mat-badge-large" 
+          type="checkbox" 
+          [value]="v.id" 
+          id="flexCheckIndeterminate"
+          [disabled]='!v.isAvailable || !isCapacityOk(v.capacity,co)'
+        >
+        <div  [ngClass]="{'available-class': v.isAvailable&&isCapacityOk(v.capacity,co), 'occupied-class': !v.isAvailable||!isCapacityOk(v.capacity,co)}"
+        class="shadow-lg p-4 mb-5 bg-body rounded-4" class="shadow-lg p-4 mb-5 bg-body rounded-4">
+          <p>Vozilo broj: <span>{{v.regNumber}}</span></p>
+          <p>Tip: <span>{{v.type}}</span></p>
+          <p [ngClass]="{enough: isCapacityOk(v.capacity,co),notEnough: !isCapacityOk(v.capacity,co)}">Nosivost: <span>{{v.capacity}}</span></p>
+          <p>Dimenzije: <span>{{v.dimensions}}</span></p>
+          <p>Gorivo: <span>{{v.fuel}}</span></p>
+          <p *ngIf="v.isAvailable">SLOBODNO</p>
+          <p *ngIf="!v.isAvailable">ZAUZETO</p>
+        </div>
+      </li>
+    </ul>
+  
+    <button class="btn w-100 rounded-3 text-light p-2"(click)="insert()">Dalje</button>
+  </div>
+  

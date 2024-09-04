@@ -8,10 +8,10 @@ import { ItemService } from 'src/app/services/item.service';
 })
 export class ItemsComponent implements OnInit {
   allItems:any[] = []
-  newItem:{} = {
-    type:"",
+  newItem:any = {
+    category:"",
     description:"",
-    price:Number 
+    price:"" 
   }
   adding:boolean = false
   constructor(private service:ItemService){}
@@ -29,12 +29,26 @@ ngOnInit(): void {
   }
   add(){
     this.service.add(this.newItem).subscribe(
-      res => console.log(res),
+      res =>{ 
+        console.log(res)
+        this.allItems.push(res)
+      },
       err => console.log(err)
     )
   }
   addingItem(){
     this.adding = true
+  }
+  cancel(){
+    this.adding = false
+  }
+  deleteItem(id:Number){
+    this.service.delete(id).subscribe(
+      res => {
+        this.allItems = this.allItems.filter(a => a.id != id);
+      },
+      err => console.log(err)
+    )
   }
 
 }

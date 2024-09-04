@@ -1,0 +1,10 @@
+
+  <h3>Isporuke</h3>
+  <div class="container">
+  <div class="row" *ngFor="let item of isporuke">
+      <div class="col-sm-12 col-md-12"><p>Posiljke sa transporta {{item.id}} su isporucene klijentima!</p></div>
+      <div class="col-sm-12 col-md-12"><button class="btn text-light" [routerLink]="['/send-facture/'+item.id]" routerLinkActive="router-link-active" >Posalji fakturu</button></div>
+      
+  </div>
+  </div>
+  

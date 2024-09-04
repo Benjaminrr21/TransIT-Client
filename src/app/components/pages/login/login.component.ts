@@ -16,6 +16,8 @@ export class LoginComponent {
   }
 
   public option:boolean = true;
+  loading:boolean = false;
+
   employee: any = {
     firstName:"",
     lastName:"",
@@ -24,7 +26,8 @@ export class LoginComponent {
     role:"",
     username:"",
     password:"",
-    salary:250
+    salary:250,
+    isAccepted:false
   }
   client: any = {
     
@@ -48,16 +51,26 @@ export class LoginComponent {
   }
 
   registerEmployee(){
+    this.loading = true
     this.service.registerEmployee(this.employee)
   .subscribe((res) => {
     console.log(this.employee)
     console.log(res)
+    this.loading= false
+    this.router.navigate(['obavestenje'])
   })
+  console.log(this.employee)
   }
   registerClient(){
+    this.loading = true
     this.service.registerClient(this.client)
     .subscribe(
-      (res) => console.log(res),
+      (res) =>{
+this.loading = false
+       console.log(res)
+    this.router.navigate(['obavestenje'])
+
+      },
       err => console.log(err)
     )
   }

@@ -1,12 +1,25 @@
+<h3>Organizacija transporta</h3>
+<p class="text-light">Na mapi je prikazana optimalna putanja za prenos posiljki na sledece lokacije:</p>
+<p class="text-light">Početna lokacija:</p>
+<input type="text" class="form-control" [(ngModel)]="start" placeholder="Adresa, grad">
+<button class="btn btn-light" (click)="addStart()">Dodaj</button>
+<br><br>
+<button *ngIf="getRole()=='Driver'" class="btn btn-primary" (click)="view()">Dodaj jos lokacija (radi demonstracije)</button>
 <table class="table">
     <thead>
-        <tr>
-            <th>a</th>
-            <th>a</th>
-            <th>a</th>
+        <tr *ngFor="let a of locations">
+            <td>{{a.address}}</td>
+        </tr>
+        <tr *ngIf="visible">
+            <input [(ngModel)]="newAddress" type="text" class="form-control" placeholder="Adresa, grad">
+            <button (click)="add()" class="btn btn-primary">Dodaj</button>
         </tr>
     </thead>
 </table>
+
+
+<button *ngIf="getRole()=='Driver'" (click)="startMoving()" class="btn btn-primary w-100">Zapocni transport</button>
+<button *ngIf="getRole()=='Dispecer'" (click)="sendRoute()" class="btn btn-primary w-100">Pošalji rutu vozaču</button>
 
 <div class="map-container">
     

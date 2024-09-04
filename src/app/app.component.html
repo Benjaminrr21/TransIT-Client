@@ -13,35 +13,63 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" aria-current="page" href="#">
+                Home</a>
             </li>
-            <li  class="nav-item">
+           
+           
+            <li *ngIf="getRole() == 'Client'" class="nav-item">
               <a class="nav-link mx-lg-2" href="createorder">Naruči</a>
             </li>
-           <!--  <li *ngIf="getRole() == 'Client'" class="nav-item">
-              <a class="nav-link mx-lg-2" href="addpackages">Proizvodi</a>
-            </li> -->
             <li *ngIf="getRole() == 'Client'" class="nav-item">
               <a id="notif" class="nav-link mx-lg-2" routerLink='myorders'>Moje pošiljke</a>
+
+                <span *ngIf="arrivedd" class="badge badge-secondary">Sigla nova!</span>
+                
+                
             </li>
-            <li  class="nav-item">
-              <a class="nav-link mx-lg-2" routerLink='allorders'>Narudžbine <span *ngIf="isVisible" class="badge badge-secondary">New</span></a>
+            <li *ngIf="getRole() == 'Client'"  class="nav-item">
+              <a id="notif" class="nav-link mx-lg-2" routerLink='factures'>Placanja</a>
+              <span *ngIf="facture" class="badge badge-secondary">Nova faktura!</span>
+            </li>
+            <li *ngIf="getRole() == 'Dispecer'"  class="nav-item">
+              <a class="nav-link mx-lg-2" routerLink='allorders'>Narudžbine <span *ngIf="isVisible" class="badge badge-secondary">New</span>
+              </a>
             </li>
             <li *ngIf="getRole() == 'Dispecer'" class="nav-item">
-              <a id="notif" class="nav-link mx-lg-2" routerLink='orders'>Transporti</a>
+              <a id="notif" class="nav-link mx-lg-2" routerLink='create-transport'>Organizuj transport</a>
             </li>
+            <li *ngIf="getRole() == 'Dispecer'" class="nav-item">
+              <a id="notif" class="nav-link mx-lg-2" routerLink='vehicles'>Vozni park</a>
+              
+            </li>
+            <li *ngIf="getRole() == 'Driver'" class="nav-item">
+              <a id="notif" class="nav-link mx-lg-2" routerLink='my-routes'>Moje rute</a>
+              <span *ngIf="arrivedd2" class="badge badge-secondary">Nova ruta!</span>
+            </li>
+          
             <li *ngIf="getRole() == 'Admin'" class="nav-item">
-              <a id="notif" class="nav-link mx-lg-2" routerLink='users'>Korisnici</a>
+              <a id="notif" class="nav-link mx-lg-2" routerLink='users'>Zaposleni</a>
             </li>
             <li *ngIf="getRole() == 'Admin'" class="nav-item">
               <a id="notif" class="nav-link mx-lg-2" routerLink='inventory'>Usluge</a>
             </li>
             <li *ngIf="getRole() == 'Admin'" class="nav-item">
-              <a id="notif" class="nav-link mx-lg-2" routerLink='orders'>Zahtevi za registraciju</a>
+              <a id="notif" class="nav-link mx-lg-2" routerLink='requests'>Zahtevi za registraciju <span *ngIf="isVisible2" class="badge badge-secondary">New</span></a>
             </li>
-            <li class="nav-item">
-              <a id="notif" class="nav-link mx-lg-2" routerLink='map'>Mapa</a>
+            <li *ngIf="getRole() == 'Manager'" class="nav-item">
+              <a id="notif" class="nav-link mx-lg-2" routerLink='clients'>Klijenti</a>
             </li>
+            <li *ngIf="getRole() == 'Manager'" class="nav-item">
+              <a id="notif" class="nav-link mx-lg-2" routerLink='isporuke'>Isporuke</a>
+              <span *ngIf="isp" class="badge badge-secondary">Nova isporuka!</span>
+
+            </li>
+            <li *ngIf="getRole() == 'Manager'"  class="nav-item">
+              <a id="notif" class="nav-link mx-lg-2" routerLink='costs'>Troskovi</a>
+              <span *ngIf="tc" class="badge badge-secondary">Novi putni trosak!</span>
+            </li>
+            
       
             
            
@@ -49,7 +77,8 @@
           
         </div>
       </div>
-      <a routerLink='login' class="login-button">Prijava</a>
+      <a routerLink='login2' *ngIf="!service.isLogedIn()" class="login-button">Prijava</a>
+      <a routerLink='login' *ngIf="!service.isLogedIn()"  class="register-button" >Registracija</a>
       <a *ngIf="service.isLogedIn()"  class="register-button" (click)="logout()">Odjava</a>
       <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

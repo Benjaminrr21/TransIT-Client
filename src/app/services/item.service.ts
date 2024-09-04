@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ItemService {
-  url:string = "https://localhost:7286/api/Item";
+  url:string = "http://transitprojectapi.somee.com/api/Item";
 
   constructor(private http:HttpClient) { }
 
   getAll(): Observable<any>{
-    return this.http.get("https://localhost:7286/api/Item")
+    return this.http.get("http://transitprojectapi.somee.com/api/Item")
   }
   add(item:any):Observable<any>{
     return this.http.post(this.url,item,{
@@ -19,5 +19,8 @@ export class ItemService {
       .set("Content-type","application/json")
       .set("Access-Control-Allow-Origin","*")
     })
+  }
+  delete(id:Number):Observable<any> {
+    return this.http.delete(this.url+"/"+id)
   }
 }

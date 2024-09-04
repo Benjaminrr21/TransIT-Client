@@ -7,7 +7,7 @@ import {Employee} from '../interfaces/employee'
   providedIn: 'root'
 })
 export class AuthService {
-  private url = "https://localhost:7286/api/Auth"
+  private url = "http://transitprojectapi.somee.com/api/Auth"
   constructor(private http:HttpClient) { }
 
   registerEmployee(employee:any){
@@ -17,9 +17,7 @@ export class AuthService {
         .set("Access-Control-Allow-Origin","*")
     })
   }
-  proba(){
-    return this.http.get("http://benjaminramovic-001-site1.htempurl.com/api/Zone")
-  }
+  
   registerClient(client:any):Observable<HttpResponse<any>>{
     return this.http.post(this.url+'/registerclient',client, {
       "headers": new HttpHeaders()

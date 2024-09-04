@@ -1,0 +1,35 @@
+<div class="containerr">
+    <h3 class="text-light text-center">Vozni park TransIT</h3>
+    <button *ngIf="!visible" (click)="set()" class="btn btn-light w-100 mb-5 p-2 rounded">Dodaj vozilo</button>
+    <button style="background-color: white; color:black;" *ngIf="visible" (click)="unset()" class="btn w-100 mb-5 p-2 rounded">Odustani</button>
+    <div *ngIf="visible" class="shadow-lg p-4 mb-5 bg-body rounded-4" class="shadow-lg p-4 mb-5 bg-body rounded-4">
+        <p> <input placeholder="Registarski broj" type="text" class="form-control" [(ngModel)]="vehicle.regNumber"></p>
+        <p> <span>Tip:</span> <select class="form-control" [(ngModel)]="vehicle.type">
+            <option value="Tip" disabled>Tip</option>
+            <option value="TERETNO">TERETNO</option>
+            <option value="PUTNICKO">PUTNICKO</option>
+        </select></p>
+        <p> <span>Nosivost:</span> <input placeholder="Nosivost" type="number" class="form-control" [(ngModel)]="vehicle.capacity"></p>
+        <p> <span>Gorivo:</span> <select placeholder="Gorivo" type="text" class="form-control" [(ngModel)]="vehicle.fuel">
+            <option value="Gorivo" disabled>Gorivo</option>
+            <option value="BENZIN">BENZIN</option>
+            <option value="DIZEL">DIZEL</option>
+        </select></p>
+       
+        <button class="btn p-2 w-100" (click)="insert()">Dodaj</button>
+      </div>
+    
+    <ul style="list-style-type: none;">
+      <li *ngFor="let v of vehicles" class="flex justify-content-center">
+        <div class="shadow-lg p-4 mb-5 bg-body rounded-4" class="shadow-lg p-4 mb-5 bg-body rounded-4">
+          <p>Vozilo broj: <span>{{v.regNumber}}</span></p>
+          <p>Tip: <span>{{v.type}}</span></p>
+          <p>Nosivost: <span>{{v.capacity}}</span></p>
+          <p>Gorivo: <span>{{v.fuel}}</span></p>
+          <button style="background-color:red;" class="btn btn-danger" (click)="delete(v.id)">Izbrisi vozilo</button>
+        </div>
+      </li>
+    </ul>
+  
+  </div>
+  

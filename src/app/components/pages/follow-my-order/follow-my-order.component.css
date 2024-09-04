@@ -23,3 +23,14 @@ p {
     transform: scale(1.03);
     transition: 0.9s;
 }
+small {
+    text-align: center;
+}
+.input-group {
+    display: flex;
+    justify-content: center;
+    
+}
+P {
+    text-transform: uppercase;
+}

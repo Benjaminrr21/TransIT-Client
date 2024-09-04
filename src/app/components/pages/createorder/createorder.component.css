@@ -17,11 +17,13 @@ p {
     width: 100%;
     background-color: #cfb095;
 }
-#container {
+#containerr {
     border-radius: 25px;
     box-shadow: 1px 2px 1px 2px;
     border: none;
     padding: 1.3rem 3rem;
+    width: 100%;
+    background-color: white;
 }
 #container:hover {
     transform: scale(1.03);

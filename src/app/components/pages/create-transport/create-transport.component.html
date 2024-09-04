@@ -1,0 +1,13 @@
+
+<div class="containerr">
+    <h3>Organizujte novi transport</h3>
+    
+    <label for="">Datum pocetka transporta</label>
+    <mat-form-field>
+        <input [(ngModel)]="date" matInput [matDatepicker]="myDatepicker">
+        <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+        <mat-datepicker #myDatepicker></mat-datepicker>
+      </mat-form-field>
+    
+       <button class="btn w-100 rounded-3 text-light p-2" (click)="createOrder()">Dalje</button>
+</div>

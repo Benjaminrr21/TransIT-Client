@@ -1,5 +1,13 @@
-
-
+body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}
 #chk{
 	display: none;
 }
@@ -32,7 +40,7 @@ mat-icon {
     margin: 0;
     font-weight: bold;
 }
-input{
+input, select{
 	width: 60%;
 	height: 20px;
 	background: #e0dede;
@@ -44,6 +52,7 @@ input{
 	outline: none;
 	border-radius: 7px;
 }
+
 button{
 	width: 60%;
 	height: 40px;
@@ -86,7 +95,9 @@ button:hover{
 	transform: scale(.6);
 }
 .inner {
-    height: 600px;
+	padding-bottom: 1.5rem;
+	border-radius: 0px 0 30px 30px;
+	background-color: white;
 
 }
 #buttons {
@@ -113,10 +124,14 @@ button:hover{
     border: 5px solid #cfb095;
     text-decoration: underline;
 }
-#heading {
-    
-}
+
 #message {
 	text-align: center;
 	color: red;
+}
+small {
+	text-align: center;
+}
+select {
+	color: black;
 }

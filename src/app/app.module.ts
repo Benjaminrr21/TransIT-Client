@@ -24,6 +24,26 @@ import { AllordersComponent } from './components/pages/allorders/allorders.compo
 import { FollowMyOrderComponent } from './components/pages/follow-my-order/follow-my-order.component';
 import { MapComponent } from './components/pages/map/map.component';
 import { ItemsComponent } from './components/pages/items/items.component';
+import { Login2Component } from './components/pages/login2/login2.component';
+import { ObavestenjeComponent } from './components/pages/obavestenje/obavestenje.component';
+import { RequestsComponent } from './components/pages/requests/requests.component';
+import { CreateTransportComponent } from './components/pages/create-transport/create-transport.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { ClientHistoryComponent } from './components/pages/client-history/client-history.component';
+import { ClientsComponent } from './components/pages/clients/clients.component';
+import { AddOrdersTransportComponent } from './components/pages/add-orders-transport/add-orders-transport.component';
+import { SearchVehiclesComponent } from './components/pages/search-vehicles/search-vehicles.component';
+import { FinancesComponent } from './components/pages/finances/finances.component';
+import { SendFactureComponent } from './components/pages/send-facture/send-facture.component';
+import { VehiclesComponent } from './components/pages/vehicles/vehicles.component';
+import { SearchDriversComponent } from './components/pages/search-drivers/search-drivers.component'
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { IsporukeComponent } from './components/pages/isporuke/isporuke.component';
+import { AddTravelCostComponent } from './components/pages/add-travel-cost/add-travel-cost.component';
+import { CostsComponent } from './components/pages/costs/costs.component';
+import { FacturesComponent } from './components/pages/factures/factures.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +60,22 @@ import { ItemsComponent } from './components/pages/items/items.component';
     FollowMyOrderComponent,
     MapComponent,
     ItemsComponent,
+    Login2Component,
+    ObavestenjeComponent,
+    RequestsComponent,
+    CreateTransportComponent,
+    ClientHistoryComponent,
+    ClientsComponent,
+    AddOrdersTransportComponent,
+    SearchVehiclesComponent,
+    FinancesComponent,
+    SendFactureComponent,
+    VehiclesComponent,
+    SearchDriversComponent,
+    IsporukeComponent,
+    AddTravelCostComponent,
+    CostsComponent,
+    FacturesComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,8 +88,10 @@ import { ItemsComponent } from './components/pages/items/items.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatBadgeModule
-    
+    MatBadgeModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatProgressSpinnerModule
     
   ],
   providers: [],

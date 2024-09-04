@@ -33,12 +33,13 @@ export class CreateorderComponent {
       timeCreated:new Date(),
       address:this.address,
       status:"ADDED",
+      currentAddress:"",
       clientId:sessionStorage.getItem("id")
     } 
     this.service.add(o).subscribe(
       (res) => {
         console.log(res)
-        this.router.navigate(["/addpackages"])
+        this.router.navigate(["/addpackages/"+res.body.id])
 
       },
       err => console.log(err)

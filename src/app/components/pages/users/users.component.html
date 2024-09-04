@@ -16,7 +16,11 @@
         <td>{{ u.firstName }}</td>
         <td>{{ u.lastName }}</td>
         <td>{{ u.email }}</td>
-        <td>{{ u.role }}</td>
+        <td *ngIf="!set">{{ u.role }}</td>
+        <td *ngIf="set==u.id"><input [(ngModel)]="role" type="text" class="form-control"></td>
+        <td><button (click)="setRole(u.id)" *ngIf="set==0" class="btn">Promeni radno mesto</button></td>
+        <td><button (click)="change(u.id)" *ngIf="set==u.id" class="btn">Promena</button></td>
+        <td><button (click)="cancel()" *ngIf="set==u.id" class="btn">Odustani</button></td>
       <!--   <td><input type="number" class="form-control" min="1" value="1" [(ngModel)]="amount[item.id]"></td>
         <td><input type="text" class="form-control" [(ngModel)]="details[item.id]"></td>
         <td><button class="btn btn-primary" (click)=add(item)>Naruči</button></td> -->

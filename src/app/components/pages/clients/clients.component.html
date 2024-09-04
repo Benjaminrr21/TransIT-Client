@@ -1,0 +1,26 @@
+<div id="cnt">
+    <h1>Klijenti</h1>
+    <div class="table-responsive">
+  <table class="table table-borderless table-hover">
+    <thead>
+      <tr>
+        <th>Naziv kompanije</th>
+        <th>Email</th>
+        <th>Kontakt telefon</th>
+        <th></th>
+        <th></th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of clients">
+        <td>{{ u.companyName }}</td>
+        <td>{{ u.email }}</td>
+        <td>{{ u.phone }}</td>
+        
+        <td><button class="btn" [routerLink]="['/client-history/'+u.id]" routerLinkActive="router-link-active" >Istorija poslovanja</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>

@@ -1,0 +1,44 @@
+
+    
+
+    <div class="inner" *ngIf="option">
+        <div id="buttons">
+            <a (click)="changeOption()" class="active"><mat-icon>work</mat-icon>Zaposleni</a>
+            <a (click)="changeOption()"><mat-icon style="color: #fff;">person</mat-icon>Klijent</a>
+        </div>
+            <input type="checkbox" id="chk" aria-hidden="true">
+
+                <div class="signup">
+                    <form>
+                        
+                        <label  for="chk" aria-hidden="true">Prijava</label>
+                        <input [(ngModel)]="login.username" type="text" name="email" placeholder="Korisničko ime" required="">
+                        <input [(ngModel)]="login.password" type="password" name="pswd" placeholder="Lozinka" required="">
+                        <p *ngIf="incorrect==true" id="message"><mat-icon style="color:red;">clear</mat-icon>Neuspešna prijava!</p>
+                        <p *ngIf="loading" style="display: flex; justify-content:center;"><mat-spinner class="spinner" [diameter]='35' color='black'></mat-spinner></p>
+                        <button (click)="loginn()">Prijavi se</button>
+                    </form>
+                </div>
+</div>
+    <div class="inner"n  *ngIf="!option">
+        <div id="buttons">
+            <a (click)="changeOption()" ><mat-icon style="color: #fff;">work</mat-icon>Zaposleni</a>
+            <a (click)="changeOption()" class="active"><mat-icon style="color: #cfb095;">person</mat-icon>Klijent</a>
+        </div>
+        <div class="main">  	
+            <input type="checkbox" id="chk" aria-hidden="true">
+                
+
+                <div class="signup">
+                    <form>
+                        <label  for="chk" aria-hidden="true">Prijava</label>
+                        <input [(ngModel)]="loginC.username" type="text" name="email" placeholder="Korisničko ime" required="">
+                        <input [(ngModel)]="loginC.password" type="password" name="pswd" placeholder="Lozinka" required="">
+                        <p *ngIf="incorrect2==true" id="message"><mat-icon style="color:red;">clear</mat-icon>Neuspešna prijava!</p>
+                        <p *ngIf="loading" style="display: flex; justify-content:center;"><mat-spinner class="spinner" [diameter]='35' color='black'></mat-spinner></p>
+
+                        <button (click)="loginClient()">Prijavi se</button>
+                    </form>
+                </div>
+        </div>
+</div>

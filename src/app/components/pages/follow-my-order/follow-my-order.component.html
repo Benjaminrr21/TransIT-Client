@@ -1,6 +1,6 @@
 <div id="container">
-    <h2>Proveri status svoje posiljke!</h2>
-    <p>Unesi broj posiljke:</p>
+    <h2>Proveri status svoje pošiljke!</h2>
+    <h4>Unesi šifru pošiljke:</h4>
     <div class="row">
 
         <div class="col-sm-1">
@@ -13,14 +13,22 @@
         <div class="col-sm-3">
             <button (click)="followOrder()" class="btn btn-light text-light">
                 
-                Posalji
+                Pošalji
               </button>
         </div>
     </div>
-    <div class="input-group mb-3">
+    <div class="input-group mb-3 mt-5">
       
-      <small style="font-size:2;" id="helpId" class="form-text text-muted">
+      <small *ngIf="status == 'SEND'" style="font-size:2;" id="helpId" class="form-text text-muted">
+        Status Vase pošiljke: <p>Na cekanju za transport.</p>
         
+      </small>
+      <small *ngIf="status == 'SEND-TO-CLIENT'" style="font-size:2;" id="helpId" class="form-text text-muted">
+        Status Vase pošiljke: <p>NA PUTU</p> 
+        Trenutna lokacija: <p>{{ca}}</p>
+      </small>
+      <small *ngIf="status == 'ERROR'" style="font-size:2;" id="helpId" class="form-text text-muted">
+        <p>Nije pronađena pošiljka sa zadatim brojem.</p>
       </small>
       
     </div>

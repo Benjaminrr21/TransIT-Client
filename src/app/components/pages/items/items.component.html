@@ -1,20 +1,25 @@
 
 <div id="container">
     <h1>Upravljanje robom koja se prevozi</h1>
-     <button (click)="addingItem()" class="bb btn btn-info text-center justify-content-end border-0 text-light">Dodaj novi proizvod</button>
+     <button *ngIf="!adding" (click)="addingItem()" class="bb btn btn-info text-center justify-content-end border-0 text-light">Dodaj novi proizvod</button>
+     <button *ngIf="adding" (click)="cancel()" class="bb btn btn-light text-center justify-content-end border-0 text-light">Cancel</button>
     <div class="table-responsive">
   <table class="table table-responsive table-bordered table-hover">
     <thead>
-      <tr>
-        <td><input type="text" placeholder="Kategorija"></td>
-        <td><input type="text" placeholder="Opis"></td>
-        <td><input type="number" placeholder="Cena"></td>
+      <tr *ngIf="adding">
+        <td class="adding"><input class="form-control" [(ngModel)]="newItem.category" type="text" placeholder="Kategorija"></td>
+        <td class="adding"><input class="form-control" [(ngModel)]="newItem.description" type="text" placeholder="Opis"></td>
+        <td class="adding"><input class="form-control" [(ngModel)]="newItem.price" type="text" placeholder="Cena"></td>
+        <td>
+          <button *ngIf="adding" (click)="add()" class="btn btn-primary text-center">Dodaj</button>
+         </td>
+         
       </tr>
       <tr>
         <th>Kategorija</th>
         <th>Opis</th>
         <th>Cena</th>
-        <th>Izmeni</th>
+        <th>Izbrisi</th>
   
       </tr>
     </thead>
@@ -23,11 +28,9 @@
         <td>{{ item.category }}</td>
         <td>{{ item.description }}</td>
         <td>{{ item.price }}</td>
-        <td>
-            <button  class="bb btn text-center"><mat-icon> border_color</mat-icon></button>
-           </td>
+        
            <td> 
-            <button class="btn btn-danger"><mat-icon> delete</mat-icon></button>
+            <button (click)="deleteItem(item.id)" class="btn btn-danger"><mat-icon> delete</mat-icon></button>
         </td>
         </tr>
         <tr *ngIf="adding"></tr>

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PackageService {
-  public url = "https://localhost:7286/api/Package"
+  public url = "http://transitprojectapi.somee.com/api/Package"
   constructor(private http:HttpClient) {
    }
 

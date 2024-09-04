@@ -9,7 +9,7 @@ export class SignalrService {
   constructor() 
   {
     this.hubConnection = new signalR.HubConnectionBuilder()
-    .withUrl('https://localhost:7286/chatHub', {
+    .withUrl('http://transitprojectapi.somee.com/chatHub', {
       skipNegotiation:true,
       transport: signalR.HttpTransportType.WebSockets
     })
@@ -32,5 +32,23 @@ export class SignalrService {
    }
    public addOrderListener = (callback: (order:any) => void) => {
      this.hubConnection.on("ReceiveOrder",callback)
+   }
+   public addRequestListener = (callback: (user:any) => void) => {
+     this.hubConnection.on("NewRequestForAdmin",callback);
+   }
+   public addOrderArrivedListener = (callback: (order:any) => void) => {
+     this.hubConnection.on("OrderArrived"+sessionStorage.getItem("id"),callback);
+   }
+   public addRouteArrivedListener = (callback: (route:any) => void) => {
+     this.hubConnection.on("NewRouteArrived"+sessionStorage.getItem("id"),callback);
+   }
+   public addFactureArrivedListener = (callback: (facture:any) => void) => {
+     this.hubConnection.on("FactureArrived",callback);
+   }
+   public addIsporukaArrivedListener = (callback: (isp:any) => void) => {
+     this.hubConnection.on("NovaIsporuka",callback);
+   }
+   public addTravelCostArrivedListener = (callback: (tc:any) => void) => {
+     this.hubConnection.on("TravelCostArrived",callback);
    }
 }
